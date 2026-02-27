@@ -31,12 +31,12 @@ class RoleBooleanGroup extends BooleanGroup
     }
 
     /**
-     * @param  NovaRequest  $request
-     * @param  string  $requestAttribute
-     * @param  HasPermissions  $model
-     * @param  string  $attribute
+     * Hydrate the given attribute on the model based on the incoming request.
+     *
+     * @param  \Illuminate\Database\Eloquent\Model|\Laravel\Nova\Support\Fluent  $model
      */
-    protected function fillAttributeFromRequest(NovaRequest $request, $requestAttribute, $model, $attribute)
+    #[\Override]
+    protected function fillAttributeFromRequest(NovaRequest $request, $requestAttribute, $model, $attribute): void
     {
         if (! $request->exists($requestAttribute)) {
             return;
