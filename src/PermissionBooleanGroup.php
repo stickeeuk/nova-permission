@@ -36,7 +36,7 @@ class PermissionBooleanGroup extends BooleanGroup
      * @param  HasPermissions  $model
      * @param  string  $attribute
      */
-    protected function fillAttributeFromRequest(NovaRequest $request, $requestAttribute, $model, $attribute)
+    protected function fillAttributeFromRequest(NovaRequest $request, string $requestAttribute, object $model, string $attribute): void
     {
         if (! $request->exists($requestAttribute)) {
             return;
